@@ -47,13 +47,11 @@ return locationNumbers;
 
 const seedsRaw = lines[0].split(': ')[1].split(' ');
 const seedPairs: number[][] = [];
-let elemCounter = 0
 for (let i = 0; i < seedsRaw.length; i += 2) {
     const seedPair = [+seedsRaw[i], +seedsRaw[i + 1]];
     seedPairs.push(seedPair);
 }
 
-let seeds: number[] = []
 let lowestLocationNumber = 0
 let counter = 0
 
@@ -72,7 +70,7 @@ seedPairs.forEach(seedPair => {
     }
 });
 
-console.log(counter);
+console.log(lowestLocationNumber);
 
 
 // const result = getLocationNumbers(seeds);

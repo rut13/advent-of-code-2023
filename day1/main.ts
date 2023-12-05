@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 
-const input = fs.readFileSync('./input.txt', 'utf8')
+const input = fs.readFileSync('./day1/input.txt', 'utf8')
 const lines = input.split('\n')
 
 let sum = 0

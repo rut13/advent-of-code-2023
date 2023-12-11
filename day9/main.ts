@@ -3,8 +3,6 @@ import * as fs from "fs";
 const input = fs.readFileSync("./day9/input.txt", "utf8");
 const lines = input.split("\n");
 
-// part 1
-
 function getExtrapolatedValue(values: number[], lastVals?: number[]) {
   const resultValues: number[] = []
   // console.log(values);
@@ -14,7 +12,7 @@ function getExtrapolatedValue(values: number[], lastVals?: number[]) {
     if (next !== undefined) {
       resultValues.push(next - value)
     } else {
-      console.log(`last value: ${value}`);
+      // console.log(`last value: ${value}`);
       
       lastVals === undefined ? lastVals = [value] : lastVals.push(value)
     }
@@ -27,7 +25,7 @@ function getExtrapolatedValue(values: number[], lastVals?: number[]) {
   }
     const diffs: number[] = []
     diffs.push(0)
-    console.log(lastVals);
+    // console.log(lastVals);
     
     lastVals!.forEach((value) => {
       const previousDiff = diffs[diffs.length - 1]
@@ -43,7 +41,10 @@ function getExtrapolatedValue(values: number[], lastVals?: number[]) {
 let sum = 0
 
 lines.forEach((line) => {
-  const values = line.split(" ").map(Number)
+  // part 1
+  // const values = line.split(" ").map(Number)
+  // part 2
+  const values = line.split(" ").map(Number).reverse()
   const res = getExtrapolatedValue(values)
   console.log(res);
   sum += res
